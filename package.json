@@ -38,7 +38,8 @@
     "electron-pack": "electron-builder"
   },
   "dependencies": {
-    "electron-serve": "^1.0.0"
+    "electron-serve": "^1.0.0",
+    "is-electron": "^2.2.0"
   },
   "devDependencies": {
     "compression": "^1.7.1",
