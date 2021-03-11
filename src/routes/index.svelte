@@ -2,6 +2,16 @@
 	import {onMount} from 'svelte'
 	import isElectron from 'is-electron'
 
+	import ApolloClient from 'apollo-boost';
+	import gql from 'graphql-tag';
+
+	onMount(()=> {
+		const client = new ApolloClient();
+		client.query({
+			query: gql`{hello}`
+		}).then(res=> {console.log(res)})
+	})
+
 
 	/// Used to have comms with electorn ///
 
@@ -24,3 +34,5 @@
 <svelte:head>
 	<title>Sapper Electron App Template</title>
 </svelte:head>
+
+
