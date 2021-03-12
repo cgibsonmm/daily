@@ -26,15 +26,13 @@ module.exports = {
               dev,
               hydratable: true,
               hotReload: false, // pending https://github.com/sveltejs/svelte/issues/2377
-              preprocess: require("svelte-windicss-preprocess/browser").preprocess(
-                {
-                  config: "tailwind.config.js", // tailwind config file path
-                  compile: true, // false: interpretation mode; true: compilation mode
-                  prefix: "windi-", // set compilation mode style prefix
-                  globalPreflight: true, // set preflight style is global or scoped
-                  globalUtility: false, // set utility style is global or scope
-                }
-              ),
+              preprocess: require("svelte-windicss-preprocess").preprocess({
+                config: "tailwind.config.js", // tailwind config file path
+                compile: false, // false: interpretation mode; true: compilation mode
+                prefix: "windi-", // set compilation mode style prefix
+                globalPreflight: true, // set preflight style is global or scoped
+                globalUtility: true, // set utility style is global or scope
+              }),
             },
           },
         },
@@ -69,15 +67,13 @@ module.exports = {
               generate: "ssr",
               hydratable: true,
               dev,
-              preprocess: require("svelte-windicss-preprocess/browser").preprocess(
-                {
-                  config: "tailwind.config.js", // tailwind config file path
-                  compile: true, // false: interpretation mode; true: compilation mode
-                  prefix: "windi-", // set compilation mode style prefix
-                  globalPreflight: true, // set preflight style is global or scoped
-                  globalUtility: false, // set utility style is global or scoped
-                }
-              ),
+              preprocess: require("svelte-windicss-preprocess").preprocess({
+                config: "tailwind.config.js", // tailwind config file path
+                compile: true, // false: interpretation mode; true: compilation mode
+                prefix: "windi-", // set compilation mode style prefix
+                globalPreflight: true, // set preflight style is global or scoped
+                globalUtility: true, // set utility style is global or scoped
+              }),
             },
           },
         },
