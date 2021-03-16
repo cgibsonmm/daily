@@ -1,5 +1,5 @@
 <script>
-  import { user, logout } from "./store/userStore.js";
+  import { user, logout } from "../store/userStore";
 </script>
 
 <div>
