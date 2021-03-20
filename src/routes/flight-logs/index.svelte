@@ -1,12 +1,5 @@
 <script>
   import FlightLogForm from "./_form.svelte";
-  import { blur, fly } from "svelte/transition";
-  import { quintOut } from "svelte/easing";
-  let formOpen = false;
-
-  function closeForm() {
-    formOpen = false;
-  }
 </script>
 
 <div
