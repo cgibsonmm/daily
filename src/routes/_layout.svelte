@@ -13,6 +13,9 @@
 </div>
 
 <style @global>
+  html {
+    font-size: 18px;
+  }
   .sora {
     font-family: "Sora", sans-serif;
   }
@@ -21,6 +24,6 @@
   }
 
   .main-btn {
-    @apply bg-accent px-6 py-2 rounded space-mono uppercase text-white;
+    @apply bg-accent px-6 py-2 rounded space-mono uppercase font-base text-white;
   }
 </style>

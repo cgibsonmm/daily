@@ -6,10 +6,10 @@
 
 <nav>
   <div class="flex items-center w-full justify-between bg-hangerLT px-6 py-4">
-    <a href="/"><img src="Glidelite.svg" /></a>
+    <a href="/"><img src="Glidelite.svg" alt="Glidelite logo" /></a>
     <div class="flex text-white items-center sora">
-      <div class="mr-4">Flight Log</div>
-      <div class="mr-4">Maintenace</div>
+      <a class="mr-4" href="/flight-logs">Flight Log</a>
+      <a class="mr-4" href="#">Maintenace</a>
       <button class="main-btn">Sign Up</button>
     </div>
   </div>
