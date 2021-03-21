@@ -4,7 +4,7 @@
   export let segment;
 </script>
 
-<div class="font-mono bg-gray-100 h-screen w-screen">
+<div class="font-mono bg-hangerBK h-screen w-screen">
   <Nav {segment} />
 
   <main>
@@ -13,7 +13,14 @@
 </div>
 
 <style @global>
-  .blue-btn {
-    @apply bg-blue-300 py-2 px-4 rounded mt-6;
+  .sora {
+    font-family: "Sora", sans-serif;
+  }
+  .space-mono {
+    font-family: "Space Mono", monospace;
+  }
+
+  .main-btn {
+    @apply bg-accent px-6 py-2 rounded space-mono uppercase;
   }
 </style>
