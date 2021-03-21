@@ -21,6 +21,6 @@
   }
 
   .main-btn {
-    @apply bg-accent px-6 py-2 rounded space-mono uppercase;
+    @apply bg-accent px-6 py-2 rounded space-mono uppercase text-white;
   }
 </style>
