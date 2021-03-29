@@ -9,7 +9,7 @@
     <a href="/"><img src="Glidelite.svg" alt="Glidelite logo" /></a>
     <div class="flex text-white items-center sora">
       <a class="mr-4" href="/flight-logs">Flight Log</a>
-      <a class="mr-4" href="#">Maintenace</a>
+      <a class="mr-4" href="/test-map">Maintenace</a>
       <button class="main-btn">Sign Up</button>
     </div>
   </div>
