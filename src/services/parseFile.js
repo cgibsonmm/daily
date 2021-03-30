@@ -16,5 +16,16 @@ async function convertToXML(file) {
 }
 
 async function convertToGeo(XML) {
-  return tj.gpx(XML);
+  let data = await tj.gpx(XML);
+  let heights = [];
+  data.features[0].geometry.coordinates.forEach((arr) => {
+    let h = [];
+    arr.forEach((alt) => {
+      h.push(alt[2]);
+    });
+    heights.push(h);
+  });
+  data.features[0].properties.heights = heights;
+  console.log(data);
+  return data;
 }

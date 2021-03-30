@@ -10,6 +10,7 @@
   $: if (geoFiles.length > 0) {
     map.addSource("route", {
       type: "geojson",
+      lineMetrics: true,
       data: geoFiles[0],
     });
 
@@ -22,8 +23,9 @@
         "line-cap": "round",
       },
       paint: {
-        "line-color": "#888",
-        "line-width": 8,
+        // "line-color": "#888",
+        "line-width": 2,
+        "line-color": "#7F5AF0",
       },
     });
   }

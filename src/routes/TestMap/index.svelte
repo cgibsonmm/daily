@@ -35,7 +35,7 @@
 <div class="h-screen">
   <Map
     accessToken="pk.eyJ1IjoiY2dpYnNvbm1tIiwiYSI6ImNrbWpqY3h2ZDBsb2Myb3J3bjdsamMycXoifQ.MW92fhSylae5dZkhQzu1QQ"
-    style="mapbox://styles/mapbox/outdoors-v11"
+    style="mapbox://styles/cgibsonmm/ck5h8a5vw06le1ilmgqtcebba"
     bind:this={mapComponent}
   >
     <Trail {geoFiles} />
