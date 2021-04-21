@@ -1,13 +1,13 @@
 <script>
-  import Nav from "../components/Nav.svelte";
+  import Nav from "../components/shared/navbar";
 
   export let segment;
 </script>
 
-<div class="font-mono bg-hangerBK h-screen w-screen">
+<div class="font-mono bg-hangerBK h-screen w-screen max-w-screen">
   <Nav {segment} />
 
-  <main>
+  <main class="container mx-auto">
     <slot />
   </main>
 </div>
@@ -27,5 +27,9 @@
 
   :global(.main-btn) {
     @apply bg-accent px-6 py-2 rounded space-mono uppercase font-base text-white;
+  }
+
+  :global(.sec-btn) {
+    @apply bg-highlight px-6 py-2 rounded space-mono uppercase font-base text-white;
   }
 </style>

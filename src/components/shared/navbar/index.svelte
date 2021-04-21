@@ -4,8 +4,10 @@
 
 <!-- <svelte:window bind:innerWidth={width} /> -->
 
-<nav>
-  <div class="flex items-center w-full justify-between bg-hangerLT px-6 py-4">
+<nav class="bg-hangerLT">
+  <div
+    class=" container mx-auto flex items-center w-full justify-between bg-hangerLT py-4"
+  >
     <a href="/"><img src="Glidelite.svg" alt="Glidelite logo" /></a>
     <div class="flex text-white items-center sora">
       <a class="mr-4" href="/flight-logs">Flight Log</a>
