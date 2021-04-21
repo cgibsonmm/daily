@@ -30,7 +30,7 @@ module.exports = {
                 // silent: false, // ADD THIS
                 // debug: true,
                 config: "tailwind.config.js", // tailwind config file path
-                compile: true, // false: interpretation mode; true: compilation mode
+                compile: false, // false: interpretation mode; true: compilation mode
                 prefix: "windi-", // set compilation mode style prefix
                 globalPreflight: true, // set preflight style is global or scoped
                 globalUtility: true, // set utility style is global or scope
@@ -74,7 +74,7 @@ module.exports = {
                   // silent: false, // ADD THIS
                   // debug: true,
                   config: "tailwind.config.js", // tailwind config file path
-                  compile: true, // false: interpretation mode; true: compilation mode
+                  compile: false, // false: interpretation mode; true: compilation mode
                   prefix: "windi-", // set compilation mode style prefix
                   globalPreflight: true, // set preflight style is global or scoped
                   globalUtility: true, // set utility style is global or scoped

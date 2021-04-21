@@ -1,6 +1,4 @@
 <script>
-  export let closeForm;
-
   import { parseGPXFiles } from "../../services/parseFile";
   import { postFlight } from "../../services/api";
   import TestMap from "../../routes/TestMap";
@@ -15,29 +13,12 @@
     let res = await postFlight(packet);
     console.log(res);
   }
-
-  function createFlight() {
-    null;
-  }
 </script>
 
-<div class="bg-hangerLT">
-  <form class="flex flex-col m-4">
-    <label>
-      Name of Flight
-      <input />
-    </label>
-    <label>
-      Name of Flight
-      <input type="file" />
-    </label>
-    <label>
-      Date
-      <input type="date" />
-    </label>
-    <label>
-      Rating
-      <input type="selector" />
-    </label>
+<div>
+  <form on:submit|preventDefault={handleSubmit}>
+    <input type="file" on:change={handleUpload} />
+    <button>Save Flight</button>
   </form>
+  <TestMap geoFiles={files} />
 </div>

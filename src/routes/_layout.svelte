@@ -1,29 +1,35 @@
 <script>
-  import Nav from "../components/Nav.svelte";
+  import Nav from "../components/shared/navbar";
 
   export let segment;
 </script>
 
-<div class="font-mono bg-hangerBK h-screen w-screen">
+<div class="font-mono bg-hangerBK h-screen w-screen max-w-screen">
   <Nav {segment} />
 
-  <main>
+  <main class="container mx-auto">
     <slot />
   </main>
 </div>
 
-<style @global>
-  html {
+<style>
+  /* your styles go here */
+  :global(html) {
     font-size: 18px;
   }
-  .sora {
+
+  :global(.sora) {
     font-family: "Sora", sans-serif;
   }
-  .space-mono {
+  :global(.space-mono) {
     font-family: "Space Mono", monospace;
   }
 
-  .main-btn {
+  :global(.main-btn) {
     @apply bg-accent px-6 py-2 rounded space-mono uppercase font-base text-white;
+  }
+
+  :global(.sec-btn) {
+    @apply bg-highlight px-6 py-2 rounded space-mono uppercase font-base text-white;
   }
 </style>
