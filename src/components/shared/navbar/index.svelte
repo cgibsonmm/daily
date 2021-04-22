@@ -1,5 +1,6 @@
 <script>
   // export const segment;
+  import { currentUser } from "../../../store/userStore";
 </script>
 
 <!-- <svelte:window bind:innerWidth={width} /> -->
@@ -12,7 +13,14 @@
     <div class="flex text-white items-center sora">
       <a class="mr-4" href="/flight-logs">Flight Log</a>
       <a class="mr-4" href="/upload">Maintenace</a>
-      <button class="main-btn">Sign Up</button>
+      {#if $currentUser}
+        <!-- content here -->
+        <button on:click={currentUser.logoutUser}>{$currentUser.email}</button>
+      {:else}
+        <!-- else content here -->
+        <a href="/auth/sign-up"><button class="main-btn">Sign Up</button></a>
+        <a href="/auth/login"><button class="main-btn">Log In</button></a>
+      {/if}
     </div>
   </div>
 </nav>

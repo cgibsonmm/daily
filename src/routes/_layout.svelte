@@ -1,5 +1,18 @@
 <script>
   import Nav from "../components/shared/navbar";
+  import { currentUser } from "../store/userStore";
+
+  $: if (typeof window !== "undefined") {
+    tryStorage();
+  }
+
+  async function tryStorage() {
+    if (
+      localStorage.getItem("auth_token") &&
+      localStorage.getItem("current_user") == "null"
+    )
+      currentUser.setCurrentUser();
+  }
 
   export let segment;
 </script>

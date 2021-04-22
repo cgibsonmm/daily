@@ -1,14 +1,33 @@
 import { writable } from "svelte/store";
+import { verify } from "../services/auth";
 
-export const DEFAULT_USER = { email: null };
+let user = null;
 
-export const user = writable(DEFAULT_USER);
+if (typeof window !== "undefined") {
+  user = localStorage.getItem("current_user");
+}
 
-export const logout = () => {
-  console.log(user);
-  user.set(DEFAULT_USER);
+export const userStore = () => {
+  const { subscribe, set } = writable(JSON.parse(user));
+
+  const setCurrentUser = async (form) => {
+    let userData = await verify();
+    console.log(userData);
+    await localStorage.setItem("current_user", JSON.stringify(userData));
+    set(userData);
+  };
+
+  const logoutUser = async () => {
+    await localStorage.removeItem("current_user");
+    await localStorage.removeItem("auth_token");
+    set(null);
+  };
+
+  return {
+    subscribe,
+    setCurrentUser,
+    logoutUser,
+  };
 };
 
-export const login = (email) => {
-  user.update((currentUser) => ({ ...currentUser, email }));
-};
+export const currentUser = userStore();
