@@ -1,7 +1,13 @@
 <script>
+  import { onMount } from "svelte";
+  import { goto } from "@sapper/app";
   import Login from "../../components/Auth/Login.svelte";
   import { loginUser } from "../../services/auth";
   import { currentUser } from "../../store/userStore";
+
+  onMount(() => {
+    $currentUser ? goto("/") : null;
+  });
 
   $: form = {
     email: "cgibsonmm@gmail.com",
@@ -12,8 +18,8 @@
     let user = await loginUser(form);
     if (user) {
       currentUser.setCurrentUser();
+      goto("/");
     }
-    console.log(currentUser);
   }
 </script>
 

@@ -27,10 +27,14 @@ export const loginUser = async (user) => {
 
 export const verify = async () => {
   token = localStorage.getItem("auth_token");
+
   try {
-    api.defaults.headers.common.authorization = token;
-    let res = await api.get("/api/v1/auth");
-    return res.data;
+    if (token) {
+      api.defaults.headers.common.authorization = token;
+      let res = await api.get("/api/v1/auth");
+
+      return res.data;
+    }
   } catch (e) {
     return e.message;
   }

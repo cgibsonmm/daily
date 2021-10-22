@@ -13,6 +13,7 @@
   let coords = [];
 
   function success(pos) {
+    console.log(pos);
     const crd = pos.coords;
     coords = [crd.longitude, crd.latitude];
     mapComponent.flyTo({ center: coords });
@@ -22,11 +23,12 @@
     console.log(e);
   }
 
-  onMount(async () => {
+  onMount(() => {
+    console.log("HERE");
     if (!navigator.geolocation) {
       status.textContent = "Geolocation is not supported by your browser";
     } else {
-      // status.textContent = "Locating…";
+      console.log("Locating…");
       navigator.geolocation.getCurrentPosition(success, error);
     }
   });

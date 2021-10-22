@@ -26,3 +26,5 @@ export const postFlight = async (data) => {
     return e.message;
   }
 };
+
+export default api;
